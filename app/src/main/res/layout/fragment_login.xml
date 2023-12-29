@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.appmonedero.ui.login.usecase.LoginViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.login.LoginFragment">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:text="@string/login_tv_title_text"
+            android:textSize="@dimen/tv_title_textsize"
+            app:layout_constraintBottom_toTopOf="@+id/tilUser"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilUser"
+            app:layout_constraintBottom_toTopOf="@+id/tilPin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            android:layout_width="@dimen/til_width"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_medium">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/login_ed_user_hint"
+                android:text="@={viewmodel.user}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPin"
+            app:layout_constraintBottom_toBottomOf="@+id/bLogin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilUser"
+            android:layout_width="@dimen/til_width"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_medium">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edPin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="@string/ed_number_digits"
+                android:hint="@string/login_ed_pin_hint"
+                android:inputType="number"
+                android:text="@={viewmodel.pin}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/bLogin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilPin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_b_login_text"
+            android:textSize="@dimen/button_textsize" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

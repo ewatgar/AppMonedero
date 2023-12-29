@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">AppMonedero</string>
+    <string name="app_name" translatable="false">AppMonedero</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="login_tv_title_text">Introduce tus credenciales</string>
+    <string name="login_ed_user_hint">Usuario</string>
+    <string name="login_ed_pin_hint">Pin</string>
+    <string name="login_b_login_text">Iniciar sesión</string>
+    <string name="ed_number_digits" translatable="false">0123456789.</string>
+
 </resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.appmonedero.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_accountsListFragment"
+            app:destination="@id/accountsListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountsListFragment"
+        android:name="com.example.appmonedero.ui.AccountsListFragment"
+        android:label="fragment_accounts_list"
+        tools:layout="@layout/fragment_accounts_list" >
+        <action
+            android:id="@+id/action_accountsListFragment_to_addAccountFragment"
+            app:destination="@id/addAccountFragment" />
+        <action
+            android:id="@+id/action_accountsListFragment_to_accountDetailsFragment"
+            app:destination="@id/accountDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAccountFragment"
+        android:name="com.example.appmonedero.ui.AddAccountFragment"
+        android:label="fragment_add_account"
+        tools:layout="@layout/fragment_add_account" />
+    <fragment
+        android:id="@+id/accountDetailsFragment"
+        android:name="com.example.appmonedero.ui.AccountDetailsFragment"
+        android:label="fragment_account_details"
+        tools:layout="@layout/fragment_account_details" >
+        <action
+            android:id="@+id/action_accountDetailsFragment_to_changeBalanceFragment"
+            app:destination="@id/changeBalanceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeBalanceFragment"
+        android:name="com.example.appmonedero.ui.ChangeBalanceFragment"
+        android:label="fragment_change_balance"
+        tools:layout="@layout/fragment_change_balance" />
+</navigation>

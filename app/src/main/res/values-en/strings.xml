@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_tv_title_text">Enter your credentials</string>
+    <string name="login_ed_user_hint">User</string>
+    <string name="login_ed_pin_hint">Pin</string>
+    <string name="login_b_login_text">Login</string>
+</resources>
