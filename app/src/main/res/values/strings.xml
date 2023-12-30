@@ -5,6 +5,12 @@
     <string name="login_ed_user_hint">Usuario</string>
     <string name="login_ed_pin_hint">Pin</string>
     <string name="login_b_login_text">Iniciar sesión</string>
-    <string name="ed_number_digits" translatable="false">0123456789.</string>
+    <string name="ed_number_digits" translatable="false">0123456789</string>
+    <string name="tv_item_list_empty_title">Sin cuentas</string>
+    <string name="tv_item_list_empty_text">Toca el boton \'+\' para crear una nueva cuenta</string>
+    <string name="error_til_username_empty">Introduce usuario</string>
+    <string name="error_til_pin_empty">Introduce pin</string>
+    <string name="error_til_pin_format">Pin debe ser un número</string>
+    <string name="error_toast_auth">No se ha podido iniciar sesión</string>
 
 </resources>

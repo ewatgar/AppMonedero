@@ -7,7 +7,6 @@
         <variable
             name="viewmodel"
             type="com.example.appmonedero.ui.login.usecase.LoginViewModel" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,15 +21,14 @@
             android:layout_marginBottom="@dimen/margin_medium"
             android:text="@string/login_tv_title_text"
             android:textSize="@dimen/tv_title_textsize"
-            app:layout_constraintBottom_toTopOf="@+id/tilUser"
+            app:layout_constraintBottom_toTopOf="@+id/tilUsername"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed" />
 
-
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilUser"
+            android:id="@+id/tilUsername"
             app:layout_constraintBottom_toTopOf="@+id/tilPin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,11 +38,11 @@
             android:layout_marginBottom="@dimen/margin_medium">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edUser"
+                android:id="@+id/edUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/login_ed_user_hint"
-                android:text="@={viewmodel.user}" />
+                android:text="@={viewmodel.username}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -52,7 +50,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/bLogin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tilUser"
+            app:layout_constraintTop_toBottomOf="@+id/tilUsername"
             android:layout_width="@dimen/til_width"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_medium">

@@ -13,10 +13,13 @@
         <action
             android:id="@+id/action_loginFragment_to_accountsListFragment"
             app:destination="@id/accountsListFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_loadingDialogFragment"
+            app:destination="@id/loadingDialogFragment" />
     </fragment>
     <fragment
         android:id="@+id/accountsListFragment"
-        android:name="com.example.appmonedero.ui.AccountsListFragment"
+        android:name="com.example.appmonedero.ui.accountslist.AccountsListFragment"
         android:label="fragment_accounts_list"
         tools:layout="@layout/fragment_accounts_list" >
         <action
@@ -25,6 +28,9 @@
         <action
             android:id="@+id/action_accountsListFragment_to_accountDetailsFragment"
             app:destination="@id/accountDetailsFragment" />
+        <argument
+            android:name="customer"
+            app:argType="com.example.appmonedero.data.model.Customer" />
     </fragment>
     <fragment
         android:id="@+id/addAccountFragment"
@@ -45,4 +51,9 @@
         android:name="com.example.appmonedero.ui.ChangeBalanceFragment"
         android:label="fragment_change_balance"
         tools:layout="@layout/fragment_change_balance" />
+    <dialog
+        android:id="@+id/loadingDialogFragment"
+        android:name="com.example.appmonedero.base.LoadingDialogFragment"
+        android:label="fragment_loading_dialog"
+        tools:layout="@layout/fragment_loading_dialog" />
 </navigation>

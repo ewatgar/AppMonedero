@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="login_tv_title_text">Enter your credentials</string>
-    <string name="login_ed_user_hint">User</string>
+    <string name="login_ed_user_hint">Username</string>
     <string name="login_ed_pin_hint">Pin</string>
     <string name="login_b_login_text">Login</string>
+    <string name="tv_item_list_empty_title">No accounts</string>
+    <string name="tv_item_list_empty_text">Press the \'+\' button to add a new account</string>
+    <string name="error_til_username_empty">Enter username</string>
+    <string name="error_til_pin_empty">Enter pin</string>
+    <string name="error_til_pin_format">Pin must be a number</string>
+    <string name="error_toast_auth">Failed to log in</string>
 </resources>
