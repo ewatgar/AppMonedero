@@ -25,7 +25,11 @@ class AccountsListViewModel: ViewModel() {
             state.value = AccountsListState.Loading(false)
             when(result){
                 Resource.Error -> state.value = AccountsListState.NoDataError
-                is Resource.Success<*> -> state.value = AccountsListState.Success(result.data as ArrayList<Account>)
+                is Resource.Success<*> -> {
+                    val dataset = result.data as ArrayList<Account>
+                    dataset.sort()
+                    state.value = AccountsListState.Success(dataset)
+                }
             }
         }
 

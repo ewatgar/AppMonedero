@@ -12,5 +12,14 @@
     <string name="error_til_pin_empty">Introduce pin</string>
     <string name="error_til_pin_format">Pin debe ser un número</string>
     <string name="error_toast_auth">No se ha podido iniciar sesión</string>
+    <string name="recycler_placeholder_paisdc" translatable="false">paisDc</string>
+    <string name="recycler_placeholder_entidad" translatable="false">entidad</string>
+    <string name="recycler_placeholder_oficina" translatable="false">oficina</string>
+    <string name="recycler_placeholder_dc" translatable="false">dc</string>
+    <string name="recycler_placeholder_accountsnum" translatable="false">accountNum</string>
+    <string name="recycler_tv_balance_title">Saldo:</string>
+    <string name="recycler_placeholder_balance" translatable="false">1000</string>
+    <string name="menu_refresh_title">actualizar lista</string>
+    <string name="menu_sort_title">ordenar lista</string>
 
 </resources>

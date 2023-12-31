@@ -3,15 +3,85 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="100dp">
 
     <TextView
-        android:id="@+id/tvPlaceholder"
-        android:layout_width="72dp"
-        android:layout_height="17dp"
-        android:text="placeholder"
+        android:id="@+id/tvPaisDc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/recycler_placeholder_paisdc"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvEntidad"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <TextView
+        android:id="@+id/tvEntidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/recycler_placeholder_entidad"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPaisDc"
+        app:layout_constraintEnd_toStartOf="@+id/tvOficina"
+        app:layout_constraintStart_toEndOf="@+id/tvPaisDc"
+        app:layout_constraintTop_toTopOf="@+id/tvPaisDc" />
+
+    <TextView
+        android:id="@+id/tvOficina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/recycler_placeholder_oficina"
+        app:layout_constraintBottom_toBottomOf="@+id/tvEntidad"
+        app:layout_constraintEnd_toStartOf="@+id/tvDc"
+        app:layout_constraintStart_toEndOf="@+id/tvEntidad"
+        app:layout_constraintTop_toTopOf="@+id/tvEntidad" />
+
+    <TextView
+        android:id="@+id/tvDc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/recycler_placeholder_dc"
+        app:layout_constraintBottom_toBottomOf="@+id/tvOficina"
+        app:layout_constraintEnd_toStartOf="@+id/tvAccountNum"
+        app:layout_constraintStart_toEndOf="@+id/tvOficina"
+        app:layout_constraintTop_toTopOf="@+id/tvOficina" />
+
+    <TextView
+        android:id="@+id/tvAccountNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/recycler_placeholder_accountsnum"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvDc"
+        app:layout_constraintTop_toTopOf="@+id/tvDc" />
+
+    <TextView
+        android:id="@+id/tvBalanceTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/recycler_tv_balance_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvBalanceNumber"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPaisDc" />
+
+    <TextView
+        android:id="@+id/tvBalanceNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/recycler_placeholder_balance"
+        app:layout_constraintBottom_toBottomOf="@+id/tvBalanceTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvBalanceTitle"
+        app:layout_constraintTop_toTopOf="@+id/tvBalanceTitle" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

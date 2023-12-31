@@ -10,4 +10,7 @@
     <string name="error_til_pin_empty">Enter pin</string>
     <string name="error_til_pin_format">Pin must be a number</string>
     <string name="error_toast_auth">Failed to log in</string>
+    <string name="recycler_tv_balance_title">Balance:</string>
+    <string name="menu_refresh_title">refresh list</string>
+    <string name="menu_sort_title">sort list</string>
 </resources>

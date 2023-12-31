@@ -18,18 +18,21 @@ class CustomerRepository private constructor() {
         }
 
         private fun initDataset(): MutableList<Customer> {
+
             val accountsList1 = arrayListOf<Account>(
-                Account(CountryCode.ES, 1234, 5678, 12, 9876543210),
-                Account(CountryCode.AU, 5678, 1234, 45, 1234567890)
+                Account(CountryCode.FR, 3234, 2434, 25, 1443567890, 56000),
+                Account(CountryCode.ES, 1234, 5678, 12, 9876543210, 1000),
+                Account(CountryCode.AU, 5678, 1234, 45, 1234567890, 50)
             )
 
             val accountsList2 = arrayListOf<Account>(
-                Account(CountryCode.UA, 9876, 5432, 67, 1357924680),
-                Account(CountryCode.US, 4321, 8765, 89, 2468013579)
+                Account(CountryCode.US, 1223, 2342, 34, 6357901359, 435000),
+                Account(CountryCode.UA, 9876, 4553, 67, 1357924680, 120),
+                Account(CountryCode.US, 4321, 8765, 89, 2468013579, 40)
             )
 
-            dataset.add(Customer("kiwi49", 1234, accountsList1))
-            dataset.add(Customer("pato111", 7734, accountsList2))
+            dataset.add(Customer("kiwi44", 1234, accountsList1))
+            dataset.add(Customer("pato11", 7734, accountsList2))
             return dataset
         }
 
@@ -44,11 +47,11 @@ class CustomerRepository private constructor() {
             }
         }
 
-        suspend fun getAccountsList(customer: Customer): Resource{
+        suspend fun getAccountsList(customerArgs: Customer): Resource{
             return withContext(Dispatchers.IO) {
                 delay(2000)
-                val customerUpdated = dataset.find { customerDataset -> customerDataset.username == customer.username }
-                val accountsList = customerUpdated!!.accountList
+                val customer = dataset.find { customerDataset -> customerDataset.username == customerArgs.username }
+                val accountsList = customer!!.accountList
                 when{
                     accountsList.isEmpty() -> Resource.Error
                     else -> Resource.Success(accountsList)
