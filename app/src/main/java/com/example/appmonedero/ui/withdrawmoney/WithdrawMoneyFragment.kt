@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.example.appmonedero.R
 
 class WithdrawMoneyFragment : Fragment() {
+    //TODO WithdrawMoneyFragment
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
