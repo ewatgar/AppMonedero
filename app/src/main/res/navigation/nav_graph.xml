@@ -48,7 +48,7 @@
         tools:layout="@layout/fragment_change_balance" />
     <dialog
         android:id="@+id/loadingDialogFragment"
-        android:name="com.example.appmonedero.base.LoadingDialogFragment"
+        android:name="com.example.appmonedero.ui.utils.LoadingDialogFragment"
         android:label="fragment_loading_dialog"
         tools:layout="@layout/fragment_loading_dialog" />
 </navigation>

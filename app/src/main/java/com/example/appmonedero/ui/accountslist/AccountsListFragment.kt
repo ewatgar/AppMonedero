@@ -17,18 +17,14 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.appmonedero.MainActivity
 import com.example.appmonedero.R
 import com.example.appmonedero.adapter.AccountsListAdapter
+import com.example.appmonedero.ui.utils.BaseFragmentDialog
 import com.example.appmonedero.data.model.Account
 import com.example.appmonedero.data.model.Customer
 import com.example.appmonedero.databinding.FragmentAccountsListBinding
-import com.example.appmonedero.databinding.FragmentLoginBinding
 import com.example.appmonedero.ui.accountslist.usecase.AccountsListState
 import com.example.appmonedero.ui.accountslist.usecase.AccountsListViewModel
-import com.example.appmonedero.ui.login.LoginFragmentDirections
-import com.example.appmonedero.ui.login.usecase.LoginViewModel
-import com.google.android.material.snackbar.Snackbar
 
 class AccountsListFragment : Fragment(), MenuProvider {
 
@@ -117,16 +113,20 @@ class AccountsListFragment : Fragment(), MenuProvider {
         _binding = null
     }
 
+    /*
     override fun onResume() {
         super.onResume()
         // Mostrar la barra de tareas
         activity?.window?.decorView?.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
         activity?.actionBar?.show()
+    }*/
+
+    private fun openChangeBalanceDialog(account:Account){
+        //TODO crear dialogo change balance
     }
 
-
     private fun initRecycler() {
-        accountsListAdapter = AccountsListAdapter()
+        accountsListAdapter = AccountsListAdapter{openChangeBalanceDialog(it)}
 
         val accountsListLayoutManager = LinearLayoutManager(requireContext())
         val divider = DividerItemDecoration(binding.rvAccountsList.context,accountsListLayoutManager.orientation)
@@ -136,7 +136,6 @@ class AccountsListFragment : Fragment(), MenuProvider {
             setHasFixedSize(true)
             addItemDecoration(divider)
         }
-
     }
 
     private fun initToolbar() {
