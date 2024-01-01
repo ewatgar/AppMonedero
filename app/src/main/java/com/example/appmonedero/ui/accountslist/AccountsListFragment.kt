@@ -1,7 +1,6 @@
 package com.example.appmonedero.ui.accountslist
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -11,6 +10,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
@@ -19,13 +19,12 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.appmonedero.R
 import com.example.appmonedero.adapter.AccountsListAdapter
-import com.example.appmonedero.ui.utils.BaseFragmentDialog
+import com.example.appmonedero.base.ChangeBalanceDialogFragment
 import com.example.appmonedero.data.model.Account
 import com.example.appmonedero.data.model.Customer
 import com.example.appmonedero.databinding.FragmentAccountsListBinding
 import com.example.appmonedero.ui.accountslist.usecase.AccountsListState
 import com.example.appmonedero.ui.accountslist.usecase.AccountsListViewModel
-import com.example.appmonedero.ui.utils.ChangeBalanceDialogFragment
 
 class AccountsListFragment : Fragment(), MenuProvider {
 

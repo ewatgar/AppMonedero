@@ -27,14 +27,27 @@
     <string name="add_ed_dc_hint" translatable="false">DC</string>
     <string name="add_ed_account_num_hint">Nº de cuenta</string>
     <string name="add_b_add_account_text">Añadir</string>
-    <string name="loading_dialog_title">Cargando...</string>
+    <string name="loading_dialog_title">Cargando…</string>
     <string name="error_til_entidad_empty">Introduce nº de entidad</string>
     <string name="error_til_oficina_empty">Introduce nº de oficina</string>
     <string name="error_til_dc_empty">Introduce nº de dc</string>
     <string name="error_til_account_num_empty">Introduce nº de cuenta</string>
-    <string name="error_til_entidad_format">Nº de entidad sólo contiene 4 digitos</string>
-    <string name="error_til_oficina_format">Nº de oficina sólo contiene 4 digitos</string>
-    <string name="error_til_dc_format">Nº de dc sólo contiene 2 digitos</string>
-    <string name="error_til_account_num_format">Nº de cuenta sólo contiene 10 digitos</string>
-
+    <string name="error_til_entidad_format">Nº de entidad debe contener 4 digitos</string>
+    <string name="error_til_oficina_format">Nº de oficina debe contener 4 digitos</string>
+    <string name="error_til_dc_format">Nº de dc debe contener 2 digitos</string>
+    <string name="error_til_account_num_format">Nº de cuenta debe contener 10 digitos</string>
+    <string name="change_balance_dialog_title">Cambiar saldo</string>
+    <string name="change_balance_dialog_message">Puedes depositar o retirar dinero de esta cuenta</string>
+    <string name="change_balance_dialog_deposit">Depositar</string>
+    <string name="change_balance_dialog_withdraw">Retirar</string>
+    <string name="deposit_tv_title_text">Depositar dinero</string>
+    <string name="deposit_withdraw_ed_money_hint">Dinero</string>
+    <string name="deposit_b_deposit_text">Depositar</string>
+    <string name="withdraw_tv_title_text">Retirar dinero</string>
+    <string name="withdraw_b_withdraw_text">Retirar</string>
+    <string name="enum_countrycode_es">España</string>
+    <string name="enum_countrycode_au">Australia</string>
+    <string name="enum_countrycode_ua">Ucrania</string>
+    <string name="enum_countrycode_us">Estados Unidos</string>
+    <string name="enum_countrycode_fr">Francia</string>
 </resources>

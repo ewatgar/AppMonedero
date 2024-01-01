@@ -7,8 +7,6 @@ import com.example.appmonedero.data.network.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
-import java.lang.Exception
-
 class CustomerRepository private constructor() {
     companion object {
         var dataset: MutableList<Customer> = mutableListOf()
@@ -62,13 +60,6 @@ class CustomerRepository private constructor() {
         fun checkAccountExists(newAccount: Account):Boolean{
             return dataset.any { c -> c.accountList.contains(newAccount) }
         }
-
-        /*
-        fun checkAccountExists(customerArgs:Customer, newAccount: Account):Boolean{
-            val customer = dataset.find { customerDataset -> customerDataset.username == customerArgs.username }
-            val index = dataset.indexOf(customer)
-            return dataset[index].accountList.contains(newAccount)
-        }*/
 
         fun createNewAccount(customerArgs:Customer, account:Account){
             val customer = dataset.find { customerDataset -> customerDataset.username == customerArgs.username }

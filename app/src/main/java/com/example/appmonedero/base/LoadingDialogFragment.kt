@@ -1,4 +1,4 @@
-package com.example.appmonedero.ui.utils
+package com.example.appmonedero.base
 
 import android.app.AlertDialog
 import android.app.Dialog
