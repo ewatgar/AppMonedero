@@ -113,14 +113,6 @@ class AccountsListFragment : Fragment(), MenuProvider {
         _binding = null
     }
 
-    /*
-    override fun onResume() {
-        super.onResume()
-        // Mostrar la barra de tareas
-        activity?.window?.decorView?.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
-        activity?.actionBar?.show()
-    }*/
-
     private fun openChangeBalanceDialog(account:Account){
         //TODO crear dialogo change balance
     }
