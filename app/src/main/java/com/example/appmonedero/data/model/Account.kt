@@ -1,5 +1,7 @@
 package com.example.appmonedero.data.model
 
+import java.io.Serializable
+
 data class Account(
     var countryCode: CountryCode,
     var entidad: Int,
@@ -7,7 +9,7 @@ data class Account(
     var dc: Int,
     var accountNum: Long,
     var balance: Int
-) :Comparable<Account> {
+) :Comparable<Account>, Serializable{
     override fun compareTo(other: Account): Int {
         return when{
             this.entidad != other.entidad -> this.entidad.compareTo(other.entidad)

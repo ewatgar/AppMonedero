@@ -31,6 +31,12 @@
         <action
             android:id="@+id/action_accountsListFragment_to_loadingDialogFragment"
             app:destination="@id/loadingDialogFragment" />
+        <action
+            android:id="@+id/action_accountsListFragment_to_depositMoneyFragment"
+            app:destination="@id/depositMoneyFragment" />
+        <action
+            android:id="@+id/action_accountsListFragment_to_withdrawMoneyFragment"
+            app:destination="@id/withdrawMoneyFragment" />
     </fragment>
     <fragment
         android:id="@+id/addAccountFragment"
@@ -41,14 +47,31 @@
             android:name="customer"
             app:argType="com.example.appmonedero.data.model.Customer" />
     </fragment>
-    <fragment
-        android:id="@+id/changeBalanceFragment"
-        android:name="com.example.appmonedero.ui.withdrawmoney.ChangeBalanceFragment"
-        android:label="fragment_change_balance"
-        tools:layout="@layout/fragment_change_balance" />
     <dialog
         android:id="@+id/loadingDialogFragment"
         android:name="com.example.appmonedero.ui.utils.LoadingDialogFragment"
         android:label="fragment_loading_dialog"
         tools:layout="@layout/fragment_loading_dialog" />
+    <fragment
+        android:id="@+id/withdrawMoneyFragment"
+        android:name="com.example.appmonedero.ui.withdrawmoney.WithdrawMoneyFragment"
+        android:label="fragment_withdraw_money"
+        tools:layout="@layout/fragment_withdraw_money">
+        <argument
+            android:name="customer"
+            app:argType="com.example.appmonedero.data.model.Customer" />
+        <argument android:name="account"
+            app:argType="com.example.appmonedero.data.model.Account" />
+    </fragment>
+    <fragment
+        android:id="@+id/depositMoneyFragment"
+        android:name="com.example.appmonedero.ui.depositmoney.DepositMoneyFragment"
+        android:label="fragment_deposit_money"
+        tools:layout="@layout/fragment_deposit_money" >
+        <argument
+            android:name="customer"
+            app:argType="com.example.appmonedero.data.model.Customer" />
+        <argument android:name="account"
+            app:argType="com.example.appmonedero.data.model.Account" />
+    </fragment>
 </navigation>

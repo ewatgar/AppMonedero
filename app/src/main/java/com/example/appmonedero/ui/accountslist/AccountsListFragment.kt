@@ -25,8 +25,11 @@ import com.example.appmonedero.data.model.Customer
 import com.example.appmonedero.databinding.FragmentAccountsListBinding
 import com.example.appmonedero.ui.accountslist.usecase.AccountsListState
 import com.example.appmonedero.ui.accountslist.usecase.AccountsListViewModel
+import com.example.appmonedero.ui.utils.ChangeBalanceDialogFragment
 
 class AccountsListFragment : Fragment(), MenuProvider {
+
+    private val TAG = "AccountsList"
 
     private var _binding: FragmentAccountsListBinding? = null
     private val binding get() = _binding!!
@@ -52,15 +55,12 @@ class AccountsListFragment : Fragment(), MenuProvider {
         val customerArgs: Customer = args.customer
         viewmodel.customer.value = customerArgs
 
-        (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
-        (activity as AppCompatActivity).supportActionBar!!.title = "Cuentas de ${viewmodel.customer.value!!.username}"
-
-        binding.bAddAccount.setOnClickListener {navigateToAccountCreation(customerArgs)}
+        binding.bAddAccount.setOnClickListener { accountCreation(customerArgs) }
+        initRecycler(customerArgs)
         initToolbar()
-        initRecycler()
 
-        viewmodel.getState().observe(viewLifecycleOwner){
-            when(it){
+        viewmodel.getState().observe(viewLifecycleOwner) {
+            when (it) {
                 is AccountsListState.Loading -> showProgressBar(it.active)
                 AccountsListState.NoDataError -> showNoDataError()
                 is AccountsListState.Success -> onSuccess(it.accountsList)
@@ -68,8 +68,9 @@ class AccountsListFragment : Fragment(), MenuProvider {
         }
     }
 
-    private fun navigateToAccountCreation(customer: Customer) {
-        val action = AccountsListFragmentDirections.actionAccountsListFragmentToAddAccountFragment(customer)
+    private fun accountCreation(customer: Customer) {
+        val action =
+            AccountsListFragmentDirections.actionAccountsListFragmentToAddAccountFragment(customer)
         findNavController().navigate(action)
     }
 
@@ -86,7 +87,7 @@ class AccountsListFragment : Fragment(), MenuProvider {
     }
 
     private fun hideNoDataError() {
-        with(binding){
+        with(binding) {
             imgEmptyList.visibility = View.GONE
             tvEmptyTitle.visibility = View.GONE
             tvEmptyText.visibility = View.GONE
@@ -94,8 +95,8 @@ class AccountsListFragment : Fragment(), MenuProvider {
         }
     }
 
-    private fun showNoDataError(){
-        with(binding){
+    private fun showNoDataError() {
+        with(binding) {
             imgEmptyList.visibility = View.VISIBLE
             tvEmptyTitle.visibility = View.VISIBLE
             tvEmptyText.visibility = View.VISIBLE
@@ -113,16 +114,14 @@ class AccountsListFragment : Fragment(), MenuProvider {
         _binding = null
     }
 
-    private fun openChangeBalanceDialog(account:Account){
-        //TODO crear dialogo change balance
-    }
-
-    private fun initRecycler() {
-        accountsListAdapter = AccountsListAdapter{openChangeBalanceDialog(it)}
-
+    private fun initRecycler(customer: Customer) {
+        accountsListAdapter = AccountsListAdapter { openChangeBalanceDialog(customer, it) }
         val accountsListLayoutManager = LinearLayoutManager(requireContext())
-        val divider = DividerItemDecoration(binding.rvAccountsList.context,accountsListLayoutManager.orientation)
-        with(binding.rvAccountsList){
+        val divider = DividerItemDecoration(
+            binding.rvAccountsList.context,
+            accountsListLayoutManager.orientation
+        )
+        with(binding.rvAccountsList) {
             layoutManager = accountsListLayoutManager
             adapter = accountsListAdapter
             setHasFixedSize(true)
@@ -130,7 +129,31 @@ class AccountsListFragment : Fragment(), MenuProvider {
         }
     }
 
+    private fun openChangeBalanceDialog(customer: Customer, account: Account) {
+        ChangeBalanceDialogFragment.newInstance(
+            customer,
+            account,
+            this::depositMoney,
+            this::withdrawMoney
+        ).show(parentFragmentManager, TAG)
+    }
+
+    private fun depositMoney(customer: Customer, account: Account) {
+        val action =
+            AccountsListFragmentDirections.actionAccountsListFragmentToDepositMoneyFragment(customer,account)
+        findNavController().navigate(action)
+    }
+
+    private fun withdrawMoney(customer: Customer, account: Account) {
+        val action =
+            AccountsListFragmentDirections.actionAccountsListFragmentToWithdrawMoneyFragment(customer,account)
+        findNavController().navigate(action)
+    }
+
     private fun initToolbar() {
+        (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
+        (activity as AppCompatActivity).supportActionBar!!.title =
+            "Cuentas de ${viewmodel.customer.value!!.username}"
         binding.toolbar.apply {
             visibility = View.VISIBLE
         }
@@ -143,15 +166,17 @@ class AccountsListFragment : Fragment(), MenuProvider {
     }
 
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-        return when (menuItem.itemId){
+        return when (menuItem.itemId) {
             R.id.menu_sort -> {
                 accountsListAdapter.sortByBalance() //sort orden PERSONALIZADO
                 return true
             }
+
             R.id.menu_refresh -> {
                 viewmodel.getAccountsList()
                 return true
             }
+
             else -> false
         }
     }
