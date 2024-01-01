@@ -10,7 +10,7 @@ import com.example.appmonedero.data.model.Account
 import com.example.appmonedero.databinding.RecyclerAccountsListBinding
 
 class AccountsListAdapter(
-
+    private val openChangeBalanceDialogListener: (account: Account) -> Unit
 ) : RecyclerView.Adapter<AccountsListAdapter.AccountsListViewHolder>() {
 
     private var dataset: ArrayList<Account> = arrayListOf()
@@ -38,9 +38,7 @@ class AccountsListAdapter(
     ) {
         val account = dataset[position]
         holder.bind(account)
-        holder.itemView.setOnClickListener {
-        //TODO
-        }
+        holder.itemView.setOnClickListener {openChangeBalanceDialogListener(account)}
     }
 
     override fun getItemCount(): Int {

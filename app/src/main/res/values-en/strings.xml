@@ -13,4 +13,16 @@
     <string name="recycler_tv_balance_title">Balance:</string>
     <string name="menu_refresh_title">refresh list</string>
     <string name="menu_sort_title">sort list</string>
+    <string name="add_tv_title_text">Enter the values</string>
+    <string name="add_ed_account_num_hint">Account Number</string>
+    <string name="add_b_add_account_text">Add</string>
+    <string name="loading_dialog_title">Loading...</string>
+    <string name="error_til_entidad_empty">Enter entidad</string>
+    <string name="error_til_oficina_empty">Enter oficina</string>
+    <string name="error_til_dc_empty">Enter dc</string>
+    <string name="error_til_account_num_empty">Enter account number</string>
+    <string name="error_til_entidad_format">Entidad only contains 4 digits</string>
+    <string name="error_til_oficina_format">Oficina only contains 4 digits</string>
+    <string name="error_til_dc_format">Dc only contains 2 digits</string>
+    <string name="error_til_account_num_format">Account number only contains 10 digits</string>
 </resources>

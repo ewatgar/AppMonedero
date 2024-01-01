@@ -34,12 +34,16 @@
     </fragment>
     <fragment
         android:id="@+id/addAccountFragment"
-        android:name="com.example.appmonedero.ui.AddAccountFragment"
+        android:name="com.example.appmonedero.ui.addaccount.AddAccountFragment"
         android:label="fragment_add_account"
-        tools:layout="@layout/fragment_add_account" />
+        tools:layout="@layout/fragment_add_account" >
+        <argument
+            android:name="customer"
+            app:argType="com.example.appmonedero.data.model.Customer" />
+    </fragment>
     <fragment
         android:id="@+id/changeBalanceFragment"
-        android:name="com.example.appmonedero.ui.ChangeBalanceFragment"
+        android:name="com.example.appmonedero.ui.withdrawmoney.ChangeBalanceFragment"
         android:label="fragment_change_balance"
         tools:layout="@layout/fragment_change_balance" />
     <dialog

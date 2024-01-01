@@ -1,14 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.AddAccountFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.example.appmonedero.ui.addaccount.usecase.AddAccountViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".ui.addaccount.AddAccountFragment">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/tvAddTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:text="@string/add_tv_title_text"
+            android:textSize="@dimen/tv_title_textsize"
+
+            app:layout_constraintBottom_toTopOf="@+id/mcvCountryCode"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mcvCountryCode"
+            android:layout_width="@dimen/til_width"
+            android:layout_height="60dp"
+            android:layout_marginBottom="@dimen/margin_medium"
+            app:cardCornerRadius="4dp"
+            app:layout_constraintBottom_toTopOf="@+id/tilEntidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAddTitle"
+            app:strokeColor="@color/grey"
+            app:strokeWidth="1dp">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spCountryCode"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilEntidad"
+            android:layout_width="@dimen/til_width"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@+id/tilOficina"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mcvCountryCode">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edEntidad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="@string/ed_number_digits"
+                android:hint="@string/add_ed_entidad_hint"
+                android:inputType="number"
+                android:text="@={viewmodel.entidad}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilOficina"
+            android:layout_width="@dimen/til_width"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@+id/tilDc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilEntidad">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edOficina"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="@string/ed_number_digits"
+                android:hint="@string/add_ed_oficina_hint"
+                android:inputType="number"
+                android:text="@={viewmodel.oficina}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilDc"
+            android:layout_width="@dimen/til_width"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@+id/tilAccountNum"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilOficina">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edDc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="@string/ed_number_digits"
+                android:hint="@string/add_ed_dc_hint"
+                android:inputType="number"
+                android:text="@={viewmodel.dc}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilAccountNum"
+            android:layout_width="@dimen/til_width"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@+id/bAddAccount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilDc">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edAccountNum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="@string/ed_number_digits"
+                android:hint="@string/add_ed_account_num_hint"
+                android:inputType="number"
+                android:text="@={viewmodel.accountNum}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/bAddAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_big"
+            android:text="@string/add_b_add_account_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilAccountNum" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -16,4 +16,19 @@ data class Account(
             else -> this.accountNum.compareTo(other.accountNum)
         }
     }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+
+        other as Account
+
+        if (countryCode != other.countryCode) return false
+        if (entidad != other.entidad) return false
+        if (oficina != other.oficina) return false
+        if (dc != other.dc) return false
+        if (accountNum != other.accountNum) return false
+
+        return true
+    }
 }

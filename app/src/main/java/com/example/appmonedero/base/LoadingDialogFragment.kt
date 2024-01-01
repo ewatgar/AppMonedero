@@ -17,7 +17,7 @@ class LoadingDialogFragment : DialogFragment() {
         val view = inflater.inflate(R.layout.fragment_loading_dialog, null)
         val builder = AlertDialog.Builder(requireContext())
         builder.setView(view)
-        builder.setTitle("Cargando...")
+        builder.setTitle(getString(R.string.loading_dialog_title))
         builder.setCancelable(false)
         return builder.create()
     }

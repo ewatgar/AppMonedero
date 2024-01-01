@@ -59,7 +59,7 @@ class AccountsListFragment : Fragment(), MenuProvider {
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (activity as AppCompatActivity).supportActionBar!!.title = "Cuentas de ${viewmodel.customer.value!!.username}"
 
-        binding.bAddAccount.setOnClickListener {Snackbar.make(it, "WIP: Añadir cuenta", Snackbar.LENGTH_LONG).show()}
+        binding.bAddAccount.setOnClickListener {navigateToAccountCreation(customerArgs)}
         initToolbar()
         initRecycler()
 
@@ -70,6 +70,11 @@ class AccountsListFragment : Fragment(), MenuProvider {
                 is AccountsListState.Success -> onSuccess(it.accountsList)
             }
         }
+    }
+
+    private fun navigateToAccountCreation(customer: Customer) {
+        val action = AccountsListFragmentDirections.actionAccountsListFragmentToAddAccountFragment(customer)
+        findNavController().navigate(action)
     }
 
     private fun onSuccess(dataset: ArrayList<Account>) {
@@ -92,7 +97,6 @@ class AccountsListFragment : Fragment(), MenuProvider {
             rvAccountsList.visibility = View.VISIBLE
         }
     }
-
 
     private fun showNoDataError(){
         with(binding){
@@ -139,8 +143,6 @@ class AccountsListFragment : Fragment(), MenuProvider {
         binding.toolbar.apply {
             visibility = View.VISIBLE
         }
-
-
         val menuhost: MenuHost = requireActivity()
         menuhost.addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }

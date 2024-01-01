@@ -34,9 +34,9 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initTextWatcher()
 
         binding.bLogin.setOnClickListener { viewmodel.validateCredentials() }
-
         viewmodel.getState().observe(viewLifecycleOwner) {
             when (it) {
                 LoginState.UsernameEmptyError -> setUsernameEmptyError()

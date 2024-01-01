@@ -34,15 +34,15 @@
             android:src="@android:drawable/ic_input_add"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.93"
+            app:layout_constraintHorizontal_bias="0.95"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.976" />
+            app:layout_constraintVertical_bias="0.97" />
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/imgEmptyList"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="@dimen/img_empty_list_dimens"
+            android:layout_height="@dimen/img_empty_list_dimens"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +59,7 @@
             android:fontFamily="sans-serif"
             android:text="@string/tv_item_list_empty_title"
             android:textAlignment="center"
-            android:textSize="30sp"
+            android:textSize="@dimen/tv_empty_title_textsize"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imgEmptyList" />
@@ -70,7 +70,7 @@
             android:layout_height="wrap_content"
             android:text="@string/tv_item_list_empty_text"
             android:textAlignment="center"
-            android:textSize="16sp"
+            android:textSize="@dimen/tv_empty_text_textsize"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvEmptyTitle" />

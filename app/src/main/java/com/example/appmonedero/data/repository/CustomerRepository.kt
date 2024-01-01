@@ -58,5 +58,22 @@ class CustomerRepository private constructor() {
                 }
             }
         }
+
+        fun checkAccountExists(newAccount: Account):Boolean{
+            return dataset.any { c -> c.accountList.contains(newAccount) }
+        }
+
+        /*
+        fun checkAccountExists(customerArgs:Customer, newAccount: Account):Boolean{
+            val customer = dataset.find { customerDataset -> customerDataset.username == customerArgs.username }
+            val index = dataset.indexOf(customer)
+            return dataset[index].accountList.contains(newAccount)
+        }*/
+
+        fun createNewAccount(customerArgs:Customer, account:Account){
+            val customer = dataset.find { customerDataset -> customerDataset.username == customerArgs.username }
+            val index = dataset.indexOf(customer)
+            dataset[index].accountList.add(account)
+        }
     }
 }
