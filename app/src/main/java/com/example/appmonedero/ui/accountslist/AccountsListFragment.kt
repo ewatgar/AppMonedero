@@ -131,10 +131,8 @@ class AccountsListFragment : Fragment(), MenuProvider {
 
     private fun openChangeBalanceDialog(customer: Customer, account: Account) {
         ChangeBalanceDialogFragment.newInstance(
-            customer,
-            account,
-            this::depositMoney,
-            this::withdrawMoney
+            { depositMoney(customer, account) },
+            { withdrawMoney(customer, account) }
         ).show(parentFragmentManager, TAG)
     }
 

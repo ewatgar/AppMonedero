@@ -8,8 +8,8 @@ import com.example.appmonedero.data.model.Account
 import com.example.appmonedero.data.model.Customer
 
 class ChangeBalanceDialogFragment(
-    private val onDepositClickListener: (Customer, Account) -> Unit,
-    private val onWithdrawClickListener: (Customer, Account) -> Unit
+    private val onDepositClickListener: () -> Unit,
+    private val onWithdrawClickListener: () -> Unit
 ): DialogFragment() {
 
     private val title: String = "Title"
@@ -18,32 +18,20 @@ class ChangeBalanceDialogFragment(
     private val negativeButton: String = "negative"
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        val customer = requireArguments().getSerializable(customer) as Customer
-        val account = requireArguments().getSerializable(account) as Account
         val builder = AlertDialog.Builder(requireContext())
         builder.setTitle(title)
         builder.setMessage(message)
-        builder.setPositiveButton(positiveButton){_,_ -> onDepositClickListener.invoke(customer, account)}
-        builder.setNegativeButton(negativeButton){_,_ -> onWithdrawClickListener.invoke(customer, account)}
+        builder.setPositiveButton(positiveButton){_,_ -> onDepositClickListener.invoke()}
+        builder.setNegativeButton(negativeButton){_,_ -> onWithdrawClickListener.invoke()}
         return builder.create()
     }
 
     companion object {
-        const val customer = "customer"
-        const val account = "account"
-
         fun newInstance(
-            customer: Customer,
-            account: Account,
-            onDepositClickListener: (Customer, Account) -> Unit,
-            onWithdrawClickListener: (Customer, Account) -> Unit
+            onDepositClickListener: () -> Unit,
+            onWithdrawClickListener: () -> Unit
         ): ChangeBalanceDialogFragment {
-            val fragment = ChangeBalanceDialogFragment(onDepositClickListener,onWithdrawClickListener)
-            val args = Bundle()
-            args.putSerializable(Companion.customer, customer)
-            args.putSerializable(Companion.account, account)
-            fragment.arguments = args
-            return fragment
+            return ChangeBalanceDialogFragment(onDepositClickListener,onWithdrawClickListener)
         }
     }
 }
