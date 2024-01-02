@@ -68,7 +68,7 @@ class WithdrawMoneyFragment : Fragment() {
         viewmodel.withdrawMoney()
         Toast.makeText(
             requireContext(),
-            getString(R.string.deposit_toast_success, viewmodel.money.value!!.toInt()),
+            getString(R.string.withdraw_toast_success, viewmodel.money.value!!.toInt()),
             Toast.LENGTH_SHORT
         ).show()
         findNavController().popBackStack()
