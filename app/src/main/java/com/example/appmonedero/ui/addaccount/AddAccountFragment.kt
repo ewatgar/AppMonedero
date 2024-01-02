@@ -43,8 +43,10 @@ class AddAccountFragment : Fragment() {
 
         initSpinnerCountryCode()
         initTextWatcher()
-        binding.bAddAccount.setOnClickListener { viewmodel.verifyNewAccount() }
-
+        binding.bAddAccount.setOnClickListener {
+            viewmodel.countryCode.value = binding.spCountryCode.selectedItem as CountryCode
+            viewmodel.verifyNewAccount() }
+        
         viewmodel.getState().observe(viewLifecycleOwner){
             when(it){
                 AddAccountState.EntidadEmptyError -> setEntidadEmptyError()
@@ -62,15 +64,14 @@ class AddAccountFragment : Fragment() {
     }
 
     private fun onSuccess() {
-        //TODO
         viewmodel.createNewAccount()
-        Toast.makeText(requireContext(), "Cuenta creada con éxito", Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireContext(), getString(R.string.add_toast_success), Toast.LENGTH_SHORT).show()
         findNavController().popBackStack()
     }
 
     private fun setAccountExistsError() {
-        //TODO
-        Toast.makeText(requireContext(), "La cuenta ya existe", Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireContext(),
+            getString(R.string.error_account_already_exists), Toast.LENGTH_SHORT).show()
     }
     private fun setEntidadEmptyError() {
         with(binding){
@@ -137,7 +138,7 @@ class AddAccountFragment : Fragment() {
         val spinnerAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_item,CountryCode.entries)
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spCountryCode.adapter = spinnerAdapter
-        viewmodel.countryCode.value = binding.spCountryCode.selectedItem as CountryCode
+        //TODO viewmodel.countryCode.value = binding.spCountryCode.selectedItem as CountryCode
     }
 
     private fun initTextWatcher() {

@@ -6,6 +6,7 @@ enum class CountryCode(val value:String) {
     UA("Ucrania"),
     US("Estados unidos"),
     FR("Francia");
+    //TODO enum countrycode traducir
 
     override fun toString(): String {
         return value

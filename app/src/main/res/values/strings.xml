@@ -33,6 +33,8 @@
     <string name="add_ed_dc_hint" translatable="false">DC</string>
     <string name="add_ed_account_num_hint">Nº de cuenta</string>
     <string name="add_b_add_account_text">Añadir</string>
+    <string name="add_toast_success">Cuenta creada con éxito</string>
+
 
     <string name="loading_dialog_title">Cargando…</string>
 
@@ -44,6 +46,7 @@
     <string name="error_til_oficina_format">Nº de oficina debe contener 4 digitos</string>
     <string name="error_til_dc_format">Nº de dc debe contener 2 digitos</string>
     <string name="error_til_account_num_format">Nº de cuenta debe contener 10 digitos</string>
+    <string name="error_account_already_exists">La cuenta ya existe</string>
 
     <string name="change_balance_dialog_title">Cambiar saldo</string>
     <string name="change_balance_dialog_message">Puedes depositar o retirar dinero de esta cuenta</string>

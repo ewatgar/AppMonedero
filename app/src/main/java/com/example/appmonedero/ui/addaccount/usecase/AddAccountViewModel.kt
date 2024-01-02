@@ -3,15 +3,11 @@ package com.example.appmonedero.ui.addaccount.usecase
 import android.text.TextUtils
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.example.appmonedero.data.model.Account
 import com.example.appmonedero.data.model.CountryCode
 import com.example.appmonedero.data.model.Customer
-import com.example.appmonedero.data.network.Resource
 import com.example.appmonedero.data.repository.CustomerRepository
 import com.example.appmonedero.data.repository.CustomerRepository.Companion.checkAccountExists
-import com.example.appmonedero.ui.login.usecase.LoginState
-import kotlinx.coroutines.launch
 
 class AddAccountViewModel: ViewModel() {
     var customer = MutableLiveData<Customer>()
