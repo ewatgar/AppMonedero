@@ -1,17 +1,21 @@
 <resources>
     <string name="app_name" translatable="false">AppMonedero</string>
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+
     <string name="login_tv_title_text">Introduce tus credenciales</string>
     <string name="login_ed_user_hint">Usuario</string>
     <string name="login_ed_pin_hint">Pin</string>
     <string name="login_b_login_text">Iniciar sesión</string>
+
     <string name="ed_number_digits" translatable="false">0123456789</string>
+
     <string name="tv_item_list_empty_title">Sin cuentas</string>
     <string name="tv_item_list_empty_text">Toca el boton \'+\' para crear una nueva cuenta</string>
+
     <string name="error_til_username_empty">Introduce usuario</string>
     <string name="error_til_pin_empty">Introduce pin</string>
     <string name="error_til_pin_format">Pin debe ser un número</string>
     <string name="error_toast_auth">No se ha podido iniciar sesión</string>
+
     <string name="recycler_placeholder_paisdc" translatable="false">paisDc</string>
     <string name="recycler_placeholder_entidad" translatable="false">entidad</string>
     <string name="recycler_placeholder_oficina" translatable="false">oficina</string>
@@ -19,15 +23,19 @@
     <string name="recycler_placeholder_accountsnum" translatable="false">accountNum</string>
     <string name="recycler_tv_balance_title">Saldo:</string>
     <string name="recycler_placeholder_balance" translatable="false">1000</string>
+
     <string name="menu_refresh_title">actualizar lista</string>
     <string name="menu_sort_title">ordenar lista</string>
+
     <string name="add_tv_title_text">Introduce los datos</string>
     <string name="add_ed_entidad_hint" translatable="false">Entidad</string>
     <string name="add_ed_oficina_hint" translatable="false">Oficina</string>
     <string name="add_ed_dc_hint" translatable="false">DC</string>
     <string name="add_ed_account_num_hint">Nº de cuenta</string>
     <string name="add_b_add_account_text">Añadir</string>
+
     <string name="loading_dialog_title">Cargando…</string>
+
     <string name="error_til_entidad_empty">Introduce nº de entidad</string>
     <string name="error_til_oficina_empty">Introduce nº de oficina</string>
     <string name="error_til_dc_empty">Introduce nº de dc</string>
@@ -36,15 +44,30 @@
     <string name="error_til_oficina_format">Nº de oficina debe contener 4 digitos</string>
     <string name="error_til_dc_format">Nº de dc debe contener 2 digitos</string>
     <string name="error_til_account_num_format">Nº de cuenta debe contener 10 digitos</string>
+
     <string name="change_balance_dialog_title">Cambiar saldo</string>
     <string name="change_balance_dialog_message">Puedes depositar o retirar dinero de esta cuenta</string>
     <string name="change_balance_dialog_deposit">Depositar</string>
     <string name="change_balance_dialog_withdraw">Retirar</string>
+
     <string name="deposit_tv_title_text">Depositar dinero</string>
     <string name="deposit_withdraw_ed_money_hint">Dinero</string>
     <string name="deposit_b_deposit_text">Depositar</string>
+    <string name="deposit_toast_success">Se ha depositado %d</string>
+
+    <string name="error_til_money_empty">Introduce dinero</string>
+    <string name="error_til_money_format">Debes introducir un número</string>
+    <string name="error_deposit_til_money_over_limit">Has depositado más del límite de fraude (%d), se controlará el movimiento</string>
+    <string name="error_deposit_til_money_double_over_limit">Has depositado más del doble del límite de fraude (%d), se cancelará el movimiento</string>
+
     <string name="withdraw_tv_title_text">Retirar dinero</string>
     <string name="withdraw_b_withdraw_text">Retirar</string>
+    <string name="withdraw_toast_success">Se ha retirado %d</string>
+
+    <string name="error_withdraw_til_money_over_limit">Has retirado más del límite de fraude (%d), se controlará el movimiento</string>
+    <string name="error_withdraw_til_money_double_over_limit">Has retirado más del doble del límite de fraude (%d), se cancelará el movimiento</string>
+    <string name="error_withdraw_til_money_not_enough_balance">No hay dinero suficiente en la cuenta</string>
+
     <string name="enum_countrycode_es">España</string>
     <string name="enum_countrycode_au">Australia</string>
     <string name="enum_countrycode_ua">Ucrania</string>

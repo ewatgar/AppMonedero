@@ -4,19 +4,26 @@
     <string name="login_ed_user_hint">Username</string>
     <string name="login_ed_pin_hint">Pin</string>
     <string name="login_b_login_text">Login</string>
+
     <string name="tv_item_list_empty_title">No accounts</string>
     <string name="tv_item_list_empty_text">Press the \'+\' button to add a new account</string>
+
     <string name="error_til_username_empty">Enter username</string>
     <string name="error_til_pin_empty">Enter pin</string>
     <string name="error_til_pin_format">Pin must be a number</string>
     <string name="error_toast_auth">Failed to log in</string>
+
     <string name="recycler_tv_balance_title">Balance:</string>
+
     <string name="menu_refresh_title">refresh list</string>
     <string name="menu_sort_title">sort list</string>
+
     <string name="add_tv_title_text">Enter the values</string>
     <string name="add_ed_account_num_hint">Account Number</string>
     <string name="add_b_add_account_text">Add</string>
+
     <string name="loading_dialog_title">Loading…</string>
+
     <string name="error_til_entidad_empty">Enter entidad</string>
     <string name="error_til_oficina_empty">Enter oficina</string>
     <string name="error_til_dc_empty">Enter dc</string>
@@ -25,15 +32,30 @@
     <string name="error_til_oficina_format">Oficina must contain 4 digits</string>
     <string name="error_til_dc_format">Dc must contain 2 digits</string>
     <string name="error_til_account_num_format">Account number must contain 10 digits</string>
+
     <string name="change_balance_dialog_title">Change balance</string>
     <string name="change_balance_dialog_message">You can deposit or withdraw money from this account</string>
     <string name="change_balance_dialog_deposit">Deposit</string>
     <string name="change_balance_dialog_withdraw">Withdraw</string>
+
     <string name="deposit_tv_title_text">Deposit money</string>
     <string name="deposit_b_deposit_text">Deposit</string>
     <string name="deposit_withdraw_ed_money_hint">Money</string>
+    <string name="deposit_toast_success">%d has been deposited</string>
+
+    <string name="error_til_money_empty">Enter money</string>
+    <string name="error_til_money_format">You must enter a number</string>
+    <string name="error_deposit_til_money_over_limit">You have deposited more than the fraud limit (%d), the movement will be monitored</string>
+    <string name="error_deposit_til_money_double_over_limit">You have deposited more than double the fraud limit (%d), the movement will be canceled</string>
+
     <string name="withdraw_tv_title_text">Withdraw money</string>
     <string name="withdraw_b_withdraw_text">Withdraw</string>
+    <string name="withdraw_toast_success">%d has been withdraw</string>
+
+    <string name="error_withdraw_til_money_over_limit">You have withdrawn more than the fraud limit (%d), the movement will be monitored</string>
+    <string name="error_withdraw_til_money_double_over_limit">You have withdrawn more than double the fraud limit (%d), the movement will be canceled</string>
+    <string name="error_withdraw_til_money_not_enough_balance">There is not enough money in the account</string>
+
     <string name="enum_countrycode_es">Spain</string>
     <string name="enum_countrycode_au">Australia</string>
     <string name="enum_countrycode_ua">Ukraine</string>

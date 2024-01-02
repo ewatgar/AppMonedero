@@ -1,22 +1,20 @@
 package com.example.appmonedero.ui.addaccount
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.appmonedero.R
-import com.example.appmonedero.data.model.Account
 import com.example.appmonedero.data.model.CountryCode
 import com.example.appmonedero.data.model.Customer
 import com.example.appmonedero.databinding.FragmentAddAccountBinding
 import com.example.appmonedero.ui.ErrorTextWatcher
-import com.example.appmonedero.ui.accountslist.AccountsListFragmentArgs
 import com.example.appmonedero.ui.addaccount.usecase.AddAccountState
 import com.example.appmonedero.ui.addaccount.usecase.AddAccountViewModel
 
@@ -64,12 +62,14 @@ class AddAccountFragment : Fragment() {
     }
 
     private fun onSuccess() {
+        //TODO
         viewmodel.createNewAccount()
         Toast.makeText(requireContext(), "Cuenta creada con éxito", Toast.LENGTH_SHORT).show()
         findNavController().popBackStack()
     }
 
     private fun setAccountExistsError() {
+        //TODO
         Toast.makeText(requireContext(), "La cuenta ya existe", Toast.LENGTH_SHORT).show()
     }
     private fun setEntidadEmptyError() {

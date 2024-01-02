@@ -5,6 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.appmonedero.data.model.Account
 import com.example.appmonedero.data.model.Customer
+import com.example.appmonedero.data.model.Transaction
+import com.example.appmonedero.data.repository.CustomerRepository
 import com.example.appmonedero.data.repository.FraudControlRepository
 
 class DepositMoneyViewModel: ViewModel() {
@@ -26,5 +28,14 @@ class DepositMoneyViewModel: ViewModel() {
             money.value!!.toInt() > FraudControlRepository.FRAUD_LIMIT -> state.value = DepositMoneyState.MoneyOverLimit
             else -> state.value = DepositMoneyState.Success
         }
+    }
+
+    fun depositMoney(){
+        CustomerRepository.depositMoney(customer.value!!,account.value!!,money.value!!.toInt())
+    }
+
+    fun controlTransaction(cancelled: Boolean){
+        val transaction = Transaction(customer.value!!, account.value!!, true, money.value!!.toInt(), cancelled)
+        FraudControlRepository.addTransaction(transaction)
     }
 }

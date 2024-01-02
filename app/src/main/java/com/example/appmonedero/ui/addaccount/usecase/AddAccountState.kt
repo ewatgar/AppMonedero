@@ -1,7 +1,5 @@
 package com.example.appmonedero.ui.addaccount.usecase
 
-import com.example.appmonedero.data.model.Account
-
 sealed class AddAccountState {
     data object EntidadEmptyError :AddAccountState()
     data object OficinaEmptyError :AddAccountState()

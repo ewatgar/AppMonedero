@@ -61,10 +61,19 @@ class CustomerRepository private constructor() {
             return dataset.any { c -> c.accountList.contains(newAccount) }
         }
 
-        fun createNewAccount(customerArgs:Customer, account:Account){
-            val customer = dataset.find { customerDataset -> customerDataset.username == customerArgs.username }
-            val index = dataset.indexOf(customer)
-            dataset[index].accountList.add(account)
+        fun createNewAccount(customerArgs:Customer, accountArgs:Account){
+            dataset.forEach{ c -> if (c == customerArgs) c.accountList.add(accountArgs)}
         }
+
+        fun depositMoney(customerArgs: Customer, accountArgs: Account, money: Int) {
+            dataset.forEach{ c -> if (c == customerArgs) c.accountList.forEach { a -> if (a == accountArgs) a.balance+=money} }
+        }
+
+        fun withdrawMoney(customerArgs: Customer, accountArgs: Account, money: Int) {
+            dataset.forEach{ c -> if (c == customerArgs) c.accountList.forEach { a -> if (a == accountArgs) a.balance-=money} }
+        }
+
+
+
     }
 }

@@ -14,7 +14,9 @@ class FraudControlRepository {
         private fun initDataset(): MutableList<Transaction> {
             return dataset
         }
+
+        fun addTransaction(transaction: Transaction){
+            dataset.add(transaction)
+        }
     }
-
-
 }
