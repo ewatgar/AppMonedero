@@ -157,7 +157,7 @@ class AccountsListFragment : Fragment(), MenuProvider {
     private fun initToolbar() {
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (activity as AppCompatActivity).supportActionBar!!.title =
-            "Cuentas de ${viewmodel.customer.value!!.username}"
+            getString(R.string.accounts_list_toolbar, viewmodel.customer.value!!.username)
         binding.toolbar.apply {
             visibility = View.VISIBLE
         }

@@ -61,6 +61,9 @@
     <string name="enum_countrycode_ua">Ukraine</string>
     <string name="enum_countrycode_us">United States</string>
     <string name="enum_countrycode_fr">France</string>
+
     <string name="error_account_already_exists">Account already exists</string>
     <string name="add_toast_success">Account created successfully</string>
+
+    <string name="accounts_list_toolbar">%s\'s accounts</string>
 </resources>

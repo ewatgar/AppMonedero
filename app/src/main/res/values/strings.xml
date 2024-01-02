@@ -76,4 +76,6 @@
     <string name="enum_countrycode_ua">Ucrania</string>
     <string name="enum_countrycode_us">Estados Unidos</string>
     <string name="enum_countrycode_fr">Francia</string>
+
+    <string name="accounts_list_toolbar">Cuentas de %s</string>
 </resources>
