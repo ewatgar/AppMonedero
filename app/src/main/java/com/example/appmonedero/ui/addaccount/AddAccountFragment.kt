@@ -1,3 +1,9 @@
+/**
+ * AddAccountFragment
+ * Tiene la función de crear y añadir una nueva cuenta al repositorio.
+ * Cuando se crea una nueva tendrá el saldo vacío, y habrá que depositar dinero.
+ */
+
 package com.example.appmonedero.ui.addaccount
 
 import android.os.Bundle
@@ -138,7 +144,6 @@ class AddAccountFragment : Fragment() {
         val spinnerAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_item,CountryCode.entries)
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spCountryCode.adapter = spinnerAdapter
-        //TODO viewmodel.countryCode.value = binding.spCountryCode.selectedItem as CountryCode
     }
 
     private fun initTextWatcher() {

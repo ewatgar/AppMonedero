@@ -1,3 +1,9 @@
+/**
+ * DepositMoneyFragment
+ * Tiene la función de depositar dinero en la cuenta elegida.
+ * Hay que tener en cuenta que no se puede añadir más del doble del límite de fraude.
+ */
+
 package com.example.appmonedero.ui.depositmoney
 
 import android.os.Bundle

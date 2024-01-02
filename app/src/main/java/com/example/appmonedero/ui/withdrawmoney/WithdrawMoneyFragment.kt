@@ -1,3 +1,10 @@
+/**
+ * WithdrawMoneyFragment
+ * Tiene la función de retirar dinero en la cuenta elegida.
+ * Hay que tener en cuenta que no se puede añadir más del doble del límite de fraude.
+ * Tampoco se puede retirar más dinero del que tiene la cuenta.
+ */
+
 package com.example.appmonedero.ui.withdrawmoney
 
 import android.os.Bundle

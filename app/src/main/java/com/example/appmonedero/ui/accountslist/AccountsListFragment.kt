@@ -1,3 +1,10 @@
+/**
+ * AccountsListFragment
+ * Tiene la función de enseñar la lista de cuentas del cliente que ha iniciado sesión.
+ * Al presionar una de las cuentas se puede depositar o retirar dinero de ella.
+ * También se puede crear una nueva al pulsar el botón de la esquina inferior derecha.
+ */
+
 package com.example.appmonedero.ui.accountslist
 
 import android.os.Bundle

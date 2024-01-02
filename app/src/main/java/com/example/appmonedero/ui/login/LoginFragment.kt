@@ -1,11 +1,18 @@
+/**
+ * LoginFragment
+ * Tiene la función de dejar que un cliente inicie sesión.
+ * Sólo puede iniciar aquel cliente que se encuentre en el repositorio,
+ * y se debe introducir bien el usuario y el pin.
+ */
+
 package com.example.appmonedero.ui.login
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.appmonedero.R
@@ -83,7 +90,6 @@ class LoginFragment : Fragment() {
     }
 
     private fun setAuthenticationError() {
-        //Snackbar.make(binding.root, getString(R.string.error_toast_auth), Snackbar.LENGTH_SHORT).show()
         Toast.makeText(requireContext(), getString(R.string.error_toast_auth), Toast.LENGTH_SHORT).show()
     }
 
